@@ -1,0 +1,349 @@
+@use "../_mixins.scss";
+@import "../variable";
+
+@keyframes chargement {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes cercles {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-wrapper {
+    background: white;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    animation: chargement 0.1s linear 2s forwards;
+    cursor: wait;
+
+    .loading-spinner {
+        position: relative;
+        width: 7em;
+        height: 7em;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 50%;
+        border: 5px solid transparent;
+        border-top-color: #99e2d0;
+        animation: cercles 2s linear 0s infinite;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 5px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: #9356dc;
+            animation: cercles 2s linear 0s infinite;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top-color: #ff79da;
+            animation: cercles 3s linear 0s infinite;
+        }
+    }
+}
+
+.barre {
+    background-color: rgb(234, 234, 234);
+    display: flex;
+    justify-content: center;
+    padding: 13px;
+}
+
+.champs-de-recherche {
+    background-color: rgb(234, 234, 234);
+    border: 0;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    outline: 0;
+}
+
+#lieu {
+    margin-left: 70px;
+    background-color: rgb(234, 234, 234);
+    color: rgb(54, 54, 54);
+}
+
+.fa-map-marker-alt {
+    color: rgb(54, 54, 54);
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(96, 96, 96);
+    opacity: 1;
+    /* Firefox */
+}
+
+.presentation {
+    background-color: rgb(247, 247, 247);
+    @include mixins.flex-center();
+    flex-direction: column;
+    height: auto;
+    padding: 35px;
+    padding-bottom: 50px;
+    gap: 30px;
+}
+
+.presentation h2 {
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: 800;
+    font-size: 23px;
+}
+
+.presentation span {
+    color: rgb(96, 96, 96);
+}
+
+.btn-explore {
+    border-radius: 25px;
+    border: 0px;
+    padding: 16px;
+    padding-left: 22px;
+    padding-right: 22px;
+    font-size: 16px;
+    font-weight: 550;
+    color: white;
+    box-shadow: 5px 4px 31px 0px rgba(125, 125, 125, 0.72);
+    -webkit-box-shadow: 5px 4px 31px 0px rgba(125, 125, 125, 0.72);
+    -moz-box-shadow: 5px 4px 31px 0px rgba(125, 125, 125, 0.72);
+    background: $secondaire-color;
+    background: linear-gradient(174deg, $secondaire-color 10%, #9356dc 80%);
+
+}
+
+.btn-explore:hover {
+    box-shadow: 5px 14px 31px 0px rgba(125, 125, 125, 0.72);
+    -webkit-box-shadow: 5px 14px 31px 0px rgba(125, 125, 125, 0.72);
+    -moz-box-shadow: 5px 14px 31px 0px rgba(125, 125, 125, 0.72);
+    transition: 0.5s;
+    background: $secondaire-color;
+    background: linear-gradient(174deg, $secondaire-color 30%, #9356dc 80%);
+
+
+}
+
+/*Fonctionnement*/
+
+.fonctionnement {
+    margin: 15px;
+
+}
+
+.fonctionnement h3 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.fonctionnement ul {
+    display: flex;
+    @include mixins.flex-center();
+    flex-direction: column;
+    gap: 25px;
+    list-style-type: none;
+
+}
+
+.fonctionnement li {
+    background-color: rgb(247, 247, 247);
+    padding: 30px;
+    padding-left: 0;
+    border-radius: 25px;
+    width: 95%;
+    box-shadow: 3px 4px 31px -9px rgba(166, 166, 166, 1);
+    -webkit-box-shadow: 3px 4px 31px -9px rgba(166, 166, 166, 1);
+    -moz-box-shadow: 3px 4px 31px -9px rgba(166, 166, 166, 1);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fonctionnement a {
+    text-decoration: none;
+    color: black;
+    @include mixins.flex-center();
+}
+
+.fonctionnement li:hover {
+    background-color: rgb(242, 234, 251);
+    transition: 0.5s;
+
+    .Flogo {
+        color: $primaire-color;
+    }
+
+}
+
+.choix {
+    font-weight: 600;
+    margin-left: 20px;
+    font-size: 19px;
+}
+
+.Flogo {
+    margin-left: 25px;
+    color: rgb(137, 137, 137);
+    font-size: 20px;
+}
+
+.num {
+    margin-left: -11px;
+    border-radius: 180px;
+    background-color: $primaire-color;
+    width: 25px;
+    height: 25px;
+    color: white;
+    @include mixins.flex-center();
+    font-size: 15px;
+}
+
+/*RESTAURANT*/
+
+.restaurant {
+    background-color: rgb(245, 245, 245);
+    margin-top: 70px;
+    padding: 20px;
+
+}
+
+.restaurant h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+.restaurant ul {
+    list-style-type: none;
+    @include mixins.flex-center();
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+
+}
+
+.restaurant li {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    height: 15.6em;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: -1px 10px 14px -5px rgba(199, 199, 199, 0.75);
+    -webkit-box-shadow: -1px 10px 14px -5px rgba(199, 199, 199, 0.75);
+    -moz-box-shadow: -1px 10px 14px -5px rgba(199, 199, 199, 0.75);
+
+    &:hover {
+        box-shadow: -1px 10px 10px 2px rgba(139, 139, 139, 0.75);
+        -webkit-box-shadow: -1px 10px 10px 2px rgba(139, 139, 139, 0.75);
+        -moz-box-shadow: -1px 10px 10px 2px rgba(139, 139, 139, 0.75);
+        transition: 0.5s;
+
+    }
+}
+
+.imageMenu {
+    display: flex;
+    justify-content: flex-end;
+    height: 70%;
+}
+
+.imageMenu img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+.new {
+    position: absolute;
+    padding: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: $tertiaire-color;
+    border-radius: 3px;
+    margin-right: 15px;
+    margin-top: 15px;
+    color: rgb(25, 146, 116);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.menuPalette {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texteMenu {
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.coeur {
+    font-size: 25px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+}
+
+.fcoeur,
+.vcoeur {
+    display: block;
+    position: absolute;
+}
+
+.fcoeur {
+    background: linear-gradient(283deg, #ff79da 0%, #9356dc 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vcoeur {
+    opacity: 1;
+    background-color: white;
+
+    &:hover {
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+    }
+}

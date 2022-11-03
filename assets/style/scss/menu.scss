@@ -1,0 +1,233 @@
+@use "../_mixins.scss";
+@import "../variable";
+
+.imageTop img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.menu {
+    background-color: rgb(245, 245, 245);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: relative;
+    margin-top: -50px;
+}
+
+.titreM {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+    h2 {
+        font-family: "Shrikhand";
+        font-weight: 500;
+    }
+
+    .fcoeur,
+    .vcoeur {
+        display: block;
+        position: absolute;
+        right: 7%;
+        margin-top: 5px;
+        font-size: 25px;
+
+    }
+
+    .fcoeur {
+        background: linear-gradient(283deg, #ff79da 0%, #9356dc 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .vcoeur {
+        opacity: 1;
+        background-color: rgb(245, 245, 245);
+
+        &:hover {
+            opacity: 0;
+            transition: 0.5s ease-in-out;
+        }
+    }
+}
+
+@keyframes fadein {
+    0% {
+        transform: rotateX(-100deg);
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateX(0deg);
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+.apparition {
+    -webkit-animation: fadein 1s linear both;
+    -o-animation: fadein 1s linear both;
+    -moz-animation: fadein 1s linear both;
+    animation: fadein 1s linear both;
+}
+
+.delai1 {
+    animation-delay: 2ms;
+}
+
+.delai2 {
+    animation-delay: 400ms;
+}
+
+.delai3 {
+    animation-delay: 600ms;
+}
+
+.delai4 {
+    animation-delay: 800ms;
+}
+
+.delai5 {
+    animation-delay: 1000ms;
+}
+
+.delai6 {
+    animation-delay: 1200ms;
+}
+
+.delai7 {
+    animation-delay: 1400ms;
+}
+
+.delai8 {
+    animation-delay: 1600ms;
+}
+
+.delai9 {
+    animation-delay: 1800ms;
+}
+
+.delai10 {
+    animation-delay: 2000ms;
+}
+
+
+.liste {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.liste .titleList {
+    color: rgb(98, 98, 98);
+    font-weight: 400;
+    padding: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    margin-bottom: 10px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 10px;
+        width: 40px;
+        border-bottom: 3px solid $tertiaire-color;
+    }
+}
+
+.liste ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+
+
+
+}
+
+.liste li {
+    background-color: white;
+    padding: 0px;
+    border-radius: 15px;
+    display: flex;
+    box-shadow: -1px 12px 9px -8px rgba(156, 156, 156, 0.47);
+    -webkit-box-shadow: -1px 12px 9px -8px rgba(156, 156, 156, 0.47);
+    -moz-box-shadow: -1px 12px 9px -8px rgba(156, 156, 156, 0.47);
+    overflow: hidden;
+}
+
+.overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menutexte {
+    width: 90%;
+    padding: 10px;
+
+    h4 {
+        margin-bottom: 5px;
+        font-size: 17px;
+    }
+}
+
+.prix {
+    margin-left: auto;
+    font-weight: 900;
+    padding-right: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+
+.check {
+    @include mixins.flex-center();
+    background: #99e2d0;
+    margin-right: -4.1rem;
+    width: 4rem;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: margin-right 500ms;
+
+}
+
+li:hover .check {
+    margin-right: 0;
+    opacity: 1;
+    width: 65px;
+}
+
+li:hover .icon {
+    transform: rotate(360deg);
+    transition: transform 1500ms;
+}
+
+.icon {
+    color: $tertiaire-color;
+    background-color: white;
+    padding: 4px;
+    border-radius: 180px;
+}
+
+.bouton {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    padding-top: 0;
+}
+
+.btn-commander {
+    padding-left: 45px;
+    padding-right: 45px;
+    font-weight: 500;
+    font-size: 17px;
+}

@@ -1,0 +1,29 @@
+@import "./scss/home.scss";
+@import "./scss/menu.scss";
+@import "./scss/header.scss";
+@import "./scss/footer.scss";
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 800px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
